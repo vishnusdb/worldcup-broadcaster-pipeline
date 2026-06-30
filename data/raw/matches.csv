@@ -1,0 +1,105 @@
+fixture_id,match_date,round,group_name,status_short,home_team,away_team,home_goals,away_goals
+1,2026-06-11,Matchday 1,Group A,FT,Mexico,South Africa,2,0
+2,2026-06-11,Matchday 1,Group A,FT,South Korea,Czech Republic,2,1
+3,2026-06-18,Matchday 8,Group A,FT,Czech Republic,South Africa,1,1
+4,2026-06-18,Matchday 8,Group A,FT,Mexico,South Korea,1,0
+5,2026-06-24,Matchday 14,Group A,FT,Czech Republic,Mexico,0,3
+6,2026-06-24,Matchday 14,Group A,FT,South Africa,South Korea,1,0
+7,2026-06-12,Matchday 2,Group B,FT,Canada,Bosnia & Herzegovina,1,1
+8,2026-06-13,Matchday 3,Group B,FT,Qatar,Switzerland,1,1
+9,2026-06-18,Matchday 8,Group B,FT,Switzerland,Bosnia & Herzegovina,4,1
+10,2026-06-18,Matchday 8,Group B,FT,Canada,Qatar,6,0
+11,2026-06-24,Matchday 14,Group B,FT,Switzerland,Canada,2,1
+12,2026-06-24,Matchday 14,Group B,FT,Bosnia & Herzegovina,Qatar,3,1
+13,2026-06-13,Matchday 3,Group C,FT,Brazil,Morocco,1,1
+14,2026-06-13,Matchday 3,Group C,FT,Haiti,Scotland,0,1
+15,2026-06-19,Matchday 9,Group C,FT,Scotland,Morocco,0,1
+16,2026-06-19,Matchday 9,Group C,FT,Brazil,Haiti,3,0
+17,2026-06-24,Matchday 14,Group C,FT,Scotland,Brazil,0,3
+18,2026-06-24,Matchday 14,Group C,FT,Morocco,Haiti,4,2
+19,2026-06-12,Matchday 2,Group D,FT,USA,Paraguay,4,1
+20,2026-06-13,Matchday 3,Group D,FT,Australia,Turkey,2,0
+21,2026-06-19,Matchday 9,Group D,FT,USA,Australia,2,0
+22,2026-06-19,Matchday 9,Group D,FT,Turkey,Paraguay,0,1
+23,2026-06-25,Matchday 15,Group D,FT,Turkey,USA,3,2
+24,2026-06-25,Matchday 15,Group D,FT,Paraguay,Australia,0,0
+25,2026-06-14,Matchday 4,Group E,FT,Germany,Curacao,7,1
+26,2026-06-14,Matchday 4,Group E,FT,Ivory Coast,Ecuador,1,0
+27,2026-06-20,Matchday 10,Group E,FT,Germany,Ivory Coast,2,1
+28,2026-06-20,Matchday 10,Group E,FT,Ecuador,Curacao,0,0
+29,2026-06-25,Matchday 15,Group E,FT,Curacao,Ivory Coast,0,2
+30,2026-06-25,Matchday 15,Group E,FT,Ecuador,Germany,2,1
+31,2026-06-14,Matchday 4,Group F,FT,Netherlands,Japan,2,2
+32,2026-06-14,Matchday 4,Group F,FT,Sweden,Tunisia,5,1
+33,2026-06-20,Matchday 10,Group F,FT,Netherlands,Sweden,5,1
+34,2026-06-20,Matchday 10,Group F,FT,Tunisia,Japan,0,4
+35,2026-06-25,Matchday 15,Group F,FT,Japan,Sweden,1,1
+36,2026-06-25,Matchday 15,Group F,FT,Tunisia,Netherlands,1,3
+37,2026-06-15,Matchday 5,Group G,FT,Belgium,Egypt,1,1
+38,2026-06-15,Matchday 5,Group G,FT,Iran,New Zealand,2,2
+39,2026-06-21,Matchday 11,Group G,FT,Belgium,Iran,0,0
+40,2026-06-21,Matchday 11,Group G,FT,New Zealand,Egypt,1,3
+41,2026-06-26,Matchday 16,Group G,FT,Egypt,Iran,1,1
+42,2026-06-26,Matchday 16,Group G,FT,New Zealand,Belgium,1,5
+43,2026-06-15,Matchday 5,Group H,FT,Spain,Cape Verde,0,0
+44,2026-06-15,Matchday 5,Group H,FT,Saudi Arabia,Uruguay,1,1
+45,2026-06-21,Matchday 11,Group H,FT,Spain,Saudi Arabia,4,0
+46,2026-06-21,Matchday 11,Group H,FT,Uruguay,Cape Verde,2,2
+47,2026-06-26,Matchday 16,Group H,FT,Cape Verde,Saudi Arabia,0,0
+48,2026-06-26,Matchday 16,Group H,FT,Uruguay,Spain,0,1
+49,2026-06-16,Matchday 6,Group I,FT,France,Senegal,3,1
+50,2026-06-16,Matchday 6,Group I,FT,Iraq,Norway,1,4
+51,2026-06-22,Matchday 12,Group I,FT,France,Iraq,3,0
+52,2026-06-22,Matchday 12,Group I,FT,Norway,Senegal,3,2
+53,2026-06-26,Matchday 16,Group I,FT,Norway,France,1,4
+54,2026-06-26,Matchday 16,Group I,FT,Senegal,Iraq,5,0
+55,2026-06-16,Matchday 6,Group J,FT,Argentina,Algeria,3,0
+56,2026-06-16,Matchday 6,Group J,FT,Austria,Jordan,3,1
+57,2026-06-22,Matchday 12,Group J,FT,Argentina,Austria,2,0
+58,2026-06-22,Matchday 12,Group J,FT,Jordan,Algeria,1,2
+59,2026-06-27,Matchday 17,Group J,FT,Algeria,Austria,3,3
+60,2026-06-27,Matchday 17,Group J,FT,Jordan,Argentina,1,3
+61,2026-06-17,Matchday 7,Group K,FT,Portugal,DR Congo,1,1
+62,2026-06-17,Matchday 7,Group K,FT,Uzbekistan,Colombia,1,3
+63,2026-06-23,Matchday 13,Group K,FT,Portugal,Uzbekistan,5,0
+64,2026-06-23,Matchday 13,Group K,FT,Colombia,DR Congo,1,0
+65,2026-06-27,Matchday 17,Group K,FT,Colombia,Portugal,0,0
+66,2026-06-27,Matchday 17,Group K,FT,DR Congo,Uzbekistan,3,1
+67,2026-06-17,Matchday 7,Group L,FT,England,Croatia,4,2
+68,2026-06-17,Matchday 7,Group L,FT,Ghana,Panama,1,0
+69,2026-06-23,Matchday 13,Group L,FT,England,Ghana,0,0
+70,2026-06-23,Matchday 13,Group L,FT,Panama,Croatia,0,1
+71,2026-06-27,Matchday 17,Group L,FT,Panama,England,0,2
+72,2026-06-27,Matchday 17,Group L,FT,Croatia,Ghana,2,1
+73,2026-06-28,Round of 32,Round of 32,FT,South Africa,Canada,0,1
+74,2026-06-29,Round of 32,Round of 32,NS,Germany,Paraguay,,
+75,2026-06-29,Round of 32,Round of 32,NS,Netherlands,Morocco,,
+76,2026-06-29,Round of 32,Round of 32,NS,Brazil,Japan,,
+77,2026-06-30,Round of 32,Round of 32,NS,France,Sweden,,
+78,2026-06-30,Round of 32,Round of 32,NS,Ivory Coast,Norway,,
+79,2026-06-30,Round of 32,Round of 32,NS,Mexico,Ecuador,,
+80,2026-07-01,Round of 32,Round of 32,NS,England,DR Congo,,
+81,2026-07-01,Round of 32,Round of 32,NS,USA,Bosnia & Herzegovina,,
+82,2026-07-01,Round of 32,Round of 32,NS,Belgium,Senegal,,
+83,2026-07-02,Round of 32,Round of 32,NS,Portugal,Croatia,,
+84,2026-07-02,Round of 32,Round of 32,NS,Spain,Austria,,
+85,2026-07-02,Round of 32,Round of 32,NS,Switzerland,Algeria,,
+86,2026-07-03,Round of 32,Round of 32,NS,Argentina,Cape Verde,,
+87,2026-07-03,Round of 32,Round of 32,NS,Colombia,Ghana,,
+88,2026-07-03,Round of 32,Round of 32,NS,Australia,Egypt,,
+89,2026-07-04,Round of 16,Round of 16,NS,W74,W77,,
+90,2026-07-04,Round of 16,Round of 16,NS,W73,W75,,
+91,2026-07-05,Round of 16,Round of 16,NS,W76,W78,,
+92,2026-07-05,Round of 16,Round of 16,NS,W79,W80,,
+93,2026-07-06,Round of 16,Round of 16,NS,W83,W84,,
+94,2026-07-06,Round of 16,Round of 16,NS,W81,W82,,
+95,2026-07-07,Round of 16,Round of 16,NS,W86,W88,,
+96,2026-07-07,Round of 16,Round of 16,NS,W85,W87,,
+97,2026-07-09,Quarter-final,Quarter-final,NS,W89,W90,,
+98,2026-07-10,Quarter-final,Quarter-final,NS,W93,W94,,
+99,2026-07-11,Quarter-final,Quarter-final,NS,W91,W92,,
+100,2026-07-11,Quarter-final,Quarter-final,NS,W95,W96,,
+101,2026-07-14,Semi-final,Semi-final,NS,W97,W98,,
+102,2026-07-15,Semi-final,Semi-final,NS,W99,W100,,
+103,2026-07-18,Match for third place,Match for third place,NS,L101,L102,,
+104,2026-07-19,Final,Final,NS,W101,W102,,
