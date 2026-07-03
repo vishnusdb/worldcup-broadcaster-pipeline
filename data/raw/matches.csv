@@ -72,27 +72,27 @@ fixture_id,match_date,round,group_name,status_short,home_team,away_team,home_goa
 71,2026-06-27,Matchday 17,Group L,FT,Panama,England,0,2
 72,2026-06-27,Matchday 17,Group L,FT,Croatia,Ghana,2,1
 73,2026-06-28,Round of 32,Round of 32,FT,South Africa,Canada,0,1
-74,2026-06-29,Round of 32,Round of 32,NS,Germany,Paraguay,,
-75,2026-06-29,Round of 32,Round of 32,NS,Netherlands,Morocco,,
-76,2026-06-29,Round of 32,Round of 32,NS,Brazil,Japan,,
-77,2026-06-30,Round of 32,Round of 32,NS,France,Sweden,,
-78,2026-06-30,Round of 32,Round of 32,NS,Ivory Coast,Norway,,
-79,2026-06-30,Round of 32,Round of 32,NS,Mexico,Ecuador,,
-80,2026-07-01,Round of 32,Round of 32,NS,England,DR Congo,,
-81,2026-07-01,Round of 32,Round of 32,NS,USA,Bosnia & Herzegovina,,
-82,2026-07-01,Round of 32,Round of 32,NS,Belgium,Senegal,,
-83,2026-07-02,Round of 32,Round of 32,NS,Portugal,Croatia,,
-84,2026-07-02,Round of 32,Round of 32,NS,Spain,Austria,,
-85,2026-07-02,Round of 32,Round of 32,NS,Switzerland,Algeria,,
+74,2026-06-29,Round of 32,Round of 32,FT,Germany,Paraguay,1,1
+75,2026-06-29,Round of 32,Round of 32,FT,Netherlands,Morocco,1,1
+76,2026-06-29,Round of 32,Round of 32,FT,Brazil,Japan,2,1
+77,2026-06-30,Round of 32,Round of 32,FT,France,Sweden,3,0
+78,2026-06-30,Round of 32,Round of 32,FT,Ivory Coast,Norway,1,2
+79,2026-06-30,Round of 32,Round of 32,FT,Mexico,Ecuador,2,0
+80,2026-07-01,Round of 32,Round of 32,FT,England,DR Congo,2,1
+81,2026-07-01,Round of 32,Round of 32,FT,USA,Bosnia & Herzegovina,2,0
+82,2026-07-01,Round of 32,Round of 32,FT,Belgium,Senegal,2,2
+83,2026-07-02,Round of 32,Round of 32,FT,Portugal,Croatia,2,1
+84,2026-07-02,Round of 32,Round of 32,FT,Spain,Austria,3,0
+85,2026-07-02,Round of 32,Round of 32,FT,Switzerland,Algeria,2,0
 86,2026-07-03,Round of 32,Round of 32,NS,Argentina,Cape Verde,,
 87,2026-07-03,Round of 32,Round of 32,NS,Colombia,Ghana,,
 88,2026-07-03,Round of 32,Round of 32,NS,Australia,Egypt,,
-89,2026-07-04,Round of 16,Round of 16,NS,W74,W77,,
-90,2026-07-04,Round of 16,Round of 16,NS,W73,W75,,
-91,2026-07-05,Round of 16,Round of 16,NS,W76,W78,,
-92,2026-07-05,Round of 16,Round of 16,NS,W79,W80,,
+89,2026-07-04,Round of 16,Round of 16,NS,Paraguay,France,,
+90,2026-07-04,Round of 16,Round of 16,NS,Canada,Morocco,,
+91,2026-07-05,Round of 16,Round of 16,NS,Brazil,Norway,,
+92,2026-07-05,Round of 16,Round of 16,NS,Mexico,England,,
 93,2026-07-06,Round of 16,Round of 16,NS,W83,W84,,
-94,2026-07-06,Round of 16,Round of 16,NS,W81,W82,,
+94,2026-07-06,Round of 16,Round of 16,NS,USA,Belgium,,
 95,2026-07-07,Round of 16,Round of 16,NS,W86,W88,,
 96,2026-07-07,Round of 16,Round of 16,NS,W85,W87,,
 97,2026-07-09,Quarter-final,Quarter-final,NS,W89,W90,,
