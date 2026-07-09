@@ -84,21 +84,21 @@ fixture_id,match_date,round,group_name,status_short,home_team,away_team,home_goa
 83,2026-07-02,Round of 32,Round of 32,FT,Portugal,Croatia,2,1
 84,2026-07-02,Round of 32,Round of 32,FT,Spain,Austria,3,0
 85,2026-07-02,Round of 32,Round of 32,FT,Switzerland,Algeria,2,0
-86,2026-07-03,Round of 32,Round of 32,NS,Argentina,Cape Verde,,
-87,2026-07-03,Round of 32,Round of 32,NS,Colombia,Ghana,,
-88,2026-07-03,Round of 32,Round of 32,NS,Australia,Egypt,,
-89,2026-07-04,Round of 16,Round of 16,NS,Paraguay,France,,
-90,2026-07-04,Round of 16,Round of 16,NS,Canada,Morocco,,
-91,2026-07-05,Round of 16,Round of 16,NS,Brazil,Norway,,
-92,2026-07-05,Round of 16,Round of 16,NS,Mexico,England,,
-93,2026-07-06,Round of 16,Round of 16,NS,W83,W84,,
-94,2026-07-06,Round of 16,Round of 16,NS,USA,Belgium,,
-95,2026-07-07,Round of 16,Round of 16,NS,W86,W88,,
-96,2026-07-07,Round of 16,Round of 16,NS,W85,W87,,
-97,2026-07-09,Quarter-final,Quarter-final,NS,W89,W90,,
-98,2026-07-10,Quarter-final,Quarter-final,NS,W93,W94,,
-99,2026-07-11,Quarter-final,Quarter-final,NS,W91,W92,,
-100,2026-07-11,Quarter-final,Quarter-final,NS,W95,W96,,
+86,2026-07-03,Round of 32,Round of 32,FT,Argentina,Cape Verde,1,1
+87,2026-07-03,Round of 32,Round of 32,FT,Colombia,Ghana,1,0
+88,2026-07-03,Round of 32,Round of 32,FT,Australia,Egypt,1,1
+89,2026-07-04,Round of 16,Round of 16,FT,Paraguay,France,0,1
+90,2026-07-04,Round of 16,Round of 16,FT,Canada,Morocco,0,3
+91,2026-07-05,Round of 16,Round of 16,FT,Brazil,Norway,1,2
+92,2026-07-05,Round of 16,Round of 16,FT,Mexico,England,2,3
+93,2026-07-06,Round of 16,Round of 16,FT,Portugal,Spain,0,1
+94,2026-07-06,Round of 16,Round of 16,FT,USA,Belgium,1,4
+95,2026-07-07,Round of 16,Round of 16,FT,Argentina,Egypt,3,2
+96,2026-07-07,Round of 16,Round of 16,FT,Switzerland,Colombia,0,0
+97,2026-07-09,Quarter-final,Quarter-final,NS,France,Morocco,,
+98,2026-07-10,Quarter-final,Quarter-final,NS,Spain,Belgium,,
+99,2026-07-11,Quarter-final,Quarter-final,NS,Norway,England,,
+100,2026-07-11,Quarter-final,Quarter-final,NS,Argentina,Switzerland,,
 101,2026-07-14,Semi-final,Semi-final,NS,W97,W98,,
 102,2026-07-15,Semi-final,Semi-final,NS,W99,W100,,
 103,2026-07-18,Match for third place,Match for third place,NS,L101,L102,,
