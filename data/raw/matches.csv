@@ -95,11 +95,11 @@ fixture_id,match_date,round,group_name,status_short,home_team,away_team,home_goa
 94,2026-07-06,Round of 16,Round of 16,FT,USA,Belgium,1,4
 95,2026-07-07,Round of 16,Round of 16,FT,Argentina,Egypt,3,2
 96,2026-07-07,Round of 16,Round of 16,FT,Switzerland,Colombia,0,0
-97,2026-07-09,Quarter-final,Quarter-final,NS,France,Morocco,,
-98,2026-07-10,Quarter-final,Quarter-final,NS,Spain,Belgium,,
-99,2026-07-11,Quarter-final,Quarter-final,NS,Norway,England,,
-100,2026-07-11,Quarter-final,Quarter-final,NS,Argentina,Switzerland,,
-101,2026-07-14,Semi-final,Semi-final,NS,W97,W98,,
-102,2026-07-15,Semi-final,Semi-final,NS,W99,W100,,
-103,2026-07-18,Match for third place,Match for third place,NS,L101,L102,,
-104,2026-07-19,Final,Final,NS,W101,W102,,
+97,2026-07-09,Quarter-final,Quarter-final,FT,France,Morocco,2,0
+98,2026-07-10,Quarter-final,Quarter-final,FT,Spain,Belgium,2,1
+99,2026-07-11,Quarter-final,Quarter-final,FT,Norway,England,1,1
+100,2026-07-11,Quarter-final,Quarter-final,FT,Argentina,Switzerland,1,1
+101,2026-07-14,Semi-final,Semi-final,FT,France,Spain,0,2
+102,2026-07-15,Semi-final,Semi-final,FT,England,Argentina,1,2
+103,2026-07-18,Match for third place,Match for third place,NS,France,England,,
+104,2026-07-19,Final,Final,NS,Spain,Argentina,,
