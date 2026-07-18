@@ -83,16 +83,60 @@ worldcup_pipeline/
    ```bash
    python3 extract_matches.py
    ```
+   once the data is gattered
+   run the ASCII SCRIPT 
+   cd ~/Desktop/worldcup_pipeline && python3 -c "
+import csv, requests
+from pathlib import Path
+
+URL = 'https://raw.githubusercontent.com/openfootball/worldcup.json/master/2026/worldcup.json'
+data = requests.get(URL).json()
+matches = data.get('matches', [])
+
+OUTPUT_PATH = Path('data/raw/matches.csv')
+FIELDNAMES = ['fixture_id','match_date','round','group_name','status_short','home_team','away_team','home_goals','away_goals']
+
+def clean(s):
+    if not s: return s
+    replacements = {'ç':'c','Ç':'C','ô':'o','é':'e','è':'e','ê':'e','î':'i','ã':'a','á':'a','à':'a','ú':'u','ü':'u','ñ':'n','ó':'o','ö':'o'}
+    for k,v in replacements.items():
+        s = s.replace(k,v)
+    return s
+
+rows = []
+for i, m in enumerate(matches, 1):
+    ft = m.get('score', {}).get('ft', [None, None])
+    hg = ft[0] if ft and len(ft) > 0 else None
+    ag = ft[1] if ft and len(ft) > 1 else None
+    rnd = m.get('round', '')
+    grp = m.get('group', rnd)
+    rows.append({
+        'fixture_id': i,
+        'match_date': m.get('date',''),
+        'round': clean(rnd),
+        'group_name': clean(grp),
+        'status_short': 'FT' if hg is not None else 'NS',
+        'home_team': clean(m.get('team1','')),
+        'away_team': clean(m.get('team2','')),
+        'home_goals': hg if hg is not None else '',
+        'away_goals': ag if ag is not None else '',
+    })
+
+with open(OUTPUT_PATH, 'w', newline='', encoding='ascii', errors='replace') as f:
+    writer = csv.DictWriter(f, fieldnames=FIELDNAMES)
+    writer.writeheader()
+    writer.writerows(rows)
+print('Done -', len(rows), 'rows,', sum(1 for r in rows if r['status_short']=='FT'), 'completed,', sum(1 for r in rows if r['status_short']=='NS'), 'upcoming')
+"
 
 4. Open `queries.sql` in MySQL Workbench (or any MySQL 8.0+ client) and run it top to bottom against a fresh database to rebuild all transformation tables.
 
 5. Export `final_standings` and `high_engagement_matches` as CSVs and load them into Power BI to rebuild the dashboard.
 
 ---
+## Key Insight (as of July 2026)
 
-## Key Insight (as of June 2026)
-
-Four confirmed upsets have been identified in the group stage so far, ranked by Elo gap (the larger the gap, the bigger the surprise):
+Five confirmed upsets have been identified across the tournament so far, including one TIER 1 Premium knockout-stage upset:
 
 | Match | Result | Elo Gap | Ad Slot Tier |
 |---|---|---|---|
@@ -100,8 +144,22 @@ Four confirmed upsets have been identified in the group stage so far, ranked by 
 | Scotland vs Morocco | 0–1 | 180 | TIER 2 — High |
 | Czech Republic vs Mexico | 0–3 | 177 | TIER 2 — High |
 | Ecuador vs Germany | 2–1 | 120 | TIER 2 — High |
+| **Brazil vs Norway** | **1–2** | **199** | **TIER 1 — Premium** |
 
+Brazil vs Norway stands out as the highest-value advertising slot of the tournament — a TIER 1 Premium upset in the knockout stage with a 199-point Elo gap, the only match of its kind across 102 completed fixtures.
 Ecuador's win over Germany stands out as the highest-profile shock relative to pre-tournament expectations, and under this model would justify a premium CPM recommendation on replay and highlight inventory for that match.
+
+---
+## Dashboard Screenshots
+
+### Page 1 — Group Stage Monitor
+![Group Stage Monitor](screenshots/dashboard_page1.png)
+
+### Page 2 — Ad Slot Intelligence
+![Ad Slot Intelligence](screenshots/dashboard_page2.png)
+
+### Page 3 — Broadcaster Recommendation
+![Broadcaster Recommendation](screenshots/dashboard_page3.png)
 
 ---
 
