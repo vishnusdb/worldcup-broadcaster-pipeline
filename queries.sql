@@ -756,6 +756,128 @@ DROP TABLE IF EXISTS raw_matches;
 
 
 -- ================================================================
+USE worldcup;
+
+-- STEP 1: matches_clean
+CREATE TABLE matches_clean AS
+SELECT
+    CAST(fixture_id AS SIGNED)                    AS fixture_id,
+    LEFT(match_date, 10)                          AS match_date,
+    TRIM(round)                                   AS round,
+    TRIM(group_name)                              AS group_name,
+    TRIM(status_short)                            AS status_short,
+    TRIM(home_team)                               AS home_team,
+    TRIM(away_team)                               AS away_team,
+    CAST(NULLIF(home_goals, '') AS SIGNED)        AS home_goals,
+    CAST(NULLIF(away_goals, '') AS SIGNED)        AS away_goals,
+    CASE WHEN status_short = 'FT' THEN 1 ELSE 0 END AS is_completed,
+    CASE
+        WHEN group_name LIKE 'Group%' THEN 'Group Stage'
+        ELSE 'Knockout Stage'
+    END AS stage_category
+FROM raw_matches;
+
+-- STEP 2: team_match_stats
+CREATE TABLE team_match_stats AS
+SELECT
+    fixture_id, match_date, stage_category,
+    home_team AS team, away_team AS opponent,
+    home_goals AS goals_for, away_goals AS goals_against,
+    CASE WHEN home_goals > away_goals THEN 3 WHEN home_goals = away_goals THEN 1 ELSE 0 END AS points,
+    CASE WHEN home_goals > away_goals THEN 1 ELSE 0 END AS win,
+    CASE WHEN home_goals = away_goals THEN 1 ELSE 0 END AS draw,
+    CASE WHEN home_goals < away_goals THEN 1 ELSE 0 END AS loss
+FROM matches_clean WHERE is_completed = 1
+UNION ALL
+SELECT
+    fixture_id, match_date, stage_category,
+    away_team AS team, home_team AS opponent,
+    away_goals AS goals_for, home_goals AS goals_against,
+    CASE WHEN away_goals > home_goals THEN 3 WHEN away_goals = home_goals THEN 1 ELSE 0 END AS points,
+    CASE WHEN away_goals > home_goals THEN 1 ELSE 0 END AS win,
+    CASE WHEN away_goals = home_goals THEN 1 ELSE 0 END AS draw,
+    CASE WHEN away_goals < home_goals THEN 1 ELSE 0 END AS loss
+FROM matches_clean WHERE is_completed = 1;
+
+-- STEP 3: group_standings
+CREATE TABLE group_standings AS
+SELECT
+    tg.group_name,
+    tms.team,
+    COUNT(*)                                     AS played,
+    SUM(tms.win)                                 AS wins,
+    SUM(tms.draw)                                AS draws,
+    SUM(tms.loss)                                AS losses,
+    SUM(tms.goals_for)                           AS goals_for,
+    SUM(tms.goals_against)                       AS goals_against,
+    SUM(tms.goals_for) - SUM(tms.goals_against)  AS goal_difference,
+    SUM(tms.points)                              AS points
+FROM team_match_stats tms
+JOIN team_groups tg ON tms.team = tg.team_name
+GROUP BY tg.group_name, tms.team
+ORDER BY tg.group_name, SUM(tms.points) DESC, (SUM(tms.goals_for) - SUM(tms.goals_against)) DESC;
+
+-- STEP 4: final_standings
+CREATE TABLE final_standings AS
+SELECT
+    group_name, team, played, wins, draws, losses,
+    goals_for, goals_against, goal_difference, points,
+    RANK() OVER (
+        PARTITION BY group_name
+        ORDER BY points DESC, goal_difference DESC, goals_for DESC
+    ) AS group_rank,
+    CASE
+        WHEN RANK() OVER (PARTITION BY group_name ORDER BY points DESC, goal_difference DESC, goals_for DESC) = 1
+        THEN 'Group Leader'
+        WHEN RANK() OVER (PARTITION BY group_name ORDER BY points DESC, goal_difference DESC, goals_for DESC) = 2
+        THEN 'Qualification Zone'
+        WHEN RANK() OVER (PARTITION BY group_name ORDER BY points DESC, goal_difference DESC, goals_for DESC) = 3
+        THEN 'Best-Third Contender'
+        ELSE 'Eliminated'
+    END AS qualification_status
+FROM group_standings;
+
+-- STEP 5: high_engagement_matches
+CREATE TABLE high_engagement_matches AS
+SELECT
+    m.fixture_id, m.match_date, m.round, m.group_name,
+    m.stage_category, m.home_team, m.away_team,
+    m.home_goals, m.away_goals,
+    eh.elo_rating AS home_elo,
+    ea.elo_rating AS away_elo,
+    ABS(eh.elo_rating - ea.elo_rating) AS elo_gap,
+    CASE
+        WHEN m.home_goals > m.away_goals AND eh.elo_rating < ea.elo_rating - 100
+        THEN 'UPSET: Lower-rated home team won'
+        WHEN m.away_goals > m.home_goals AND ea.elo_rating < eh.elo_rating - 100
+        THEN 'UPSET: Lower-rated away team won'
+        WHEN m.home_goals > m.away_goals THEN 'Expected: Home win'
+        WHEN m.away_goals > m.home_goals THEN 'Expected: Away win'
+        ELSE 'Draw'
+    END AS result_classification,
+    CASE
+        WHEN (m.home_goals > m.away_goals AND eh.elo_rating < ea.elo_rating - 100)
+          OR (m.away_goals > m.home_goals AND ea.elo_rating < eh.elo_rating - 100)
+        THEN CASE WHEN m.stage_category = 'Knockout Stage' THEN 'TIER 1 - Premium'
+                  ELSE 'TIER 2 - High' END
+        WHEN m.stage_category = 'Knockout Stage' THEN 'TIER 3 - Elevated'
+        ELSE 'TIER 4 - Standard'
+    END AS ad_slot_tier
+FROM matches_clean m
+JOIN elo_ratings eh ON m.home_team = eh.team_name
+JOIN elo_ratings ea ON m.away_team = ea.team_name
+WHERE m.is_completed = 1;
+----------------------------------------------------------------
+SELECT match_date, home_team, away_team,
+       home_goals, away_goals,
+       home_elo, away_elo, elo_gap,
+       result_classification, ad_slot_tier
+FROM high_engagement_matches
+WHERE result_classification LIKE 'UPSET%'
+ORDER BY elo_gap DESC;
+-- ================================================================
+
+
 -- END OF QUERIES.SQL
 -- Last updated: June 2026
 -- Re-run extract_matches.py daily to refresh match data,
